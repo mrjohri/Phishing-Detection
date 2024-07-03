@@ -1,0 +1,53 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phishing Detection Result</title>
+    <link rel="stylesheet" type="text/css" href="main.css">
+</head>
+
+<body>
+    <div class="container2">
+        <form id="url_form">
+            <p>Phising Detection Result</p>
+            <p>URL: <a href="{{ url }}">{{ url }}</a></p>
+            <p>Prediction: {{ prediction }}</p>
+        </form>
+        <div class="drops">
+            <div class="drop drop-1"></div>
+            <div class="drop drop-2"></div>
+            <div class="drop drop-3"></div>
+        </div>
+    </div>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phishing Detection Result</title>
+    <link rel="stylesheet" type="text/css" href="main.css">
+</head>
+
+<body>
+    <div class="container2">
+        <form id="url_form">
+            <p>Phishing Detection Result</p>
+            <p>URL: <a href="{{ url }}">{{ url }}</a></p>
+            {% if prediction is defined %}
+                <p>Prediction: {{ prediction }}</p>
+            {% else %}
+                <p>Error fetching webpage</p>
+            {% endif %}
+        </form>
+        <div class="drops">
+            <div class="drop drop-1"></div>
+            <div class="drop drop-2"></div>
+            <div class="drop drop-3"></div>
+        </div>
+    </div>
+</body>
+</html>
